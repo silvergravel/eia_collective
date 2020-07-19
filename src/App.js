@@ -27,7 +27,7 @@ const App = () => {
   return (
     <div className="App">
       <h2>Redirecting you to your email client...</h2>
-      <a id='mail_link' href={emailString} target='_blank' style={{visibility: 'hidden'}}>mail</a>
+      <a id='mail_link' href={emailString} style={{visibility: 'hidden'}}>mail</a>
     </div>
   );
 }
