@@ -12,7 +12,7 @@ const App = () => {
 
   const email_to_use = email_templates[getRandomInt(email_templates.length)];
   let { subject, body } = email_to_use;
-  body = body.join('%0D%0A%0D%0A');
+  body = body.join('<br><br>');
   let emailString = `mailto:${to}?subject=${subject}&body=${body}`
 
   useEffect(() => {
