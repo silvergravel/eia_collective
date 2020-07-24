@@ -7,7 +7,7 @@ const email_templates = [
   email_1,
   email_2,
   email_3,
-  email_4,
+  email_4
 ]
 
 export default email_templates;
