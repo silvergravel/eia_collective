@@ -29,7 +29,7 @@ const App = () => {
     <div className="App">
       <h2>Redirecting you to your email client...</h2>
       <h6>Didn't redirect? <a href={emailString}>Click here</a></h6>
-      <h6>Still Didn't redirect? Please copy paste the email recipient, subject and body given below</h6>
+      <h6>Still didn't redirect? Please copy paste the email recipient, subject and body given below.</h6>
       <a id='mail_link' href={emailString} style={{visibility: 'hidden'}}>mail</a>
       <div style={{padding: '60px', textAlign: 'left'}}>
         <p ><strong>TO: </strong></p>
