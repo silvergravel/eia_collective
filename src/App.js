@@ -28,10 +28,14 @@ const App = () => {
   return (
     <div className="App">
       <h2>Redirecting you to your email client...</h2>
+      <h6>Didn't redirect? <a href={emailString}>Click here</a></h6>
+      <h6>Still Didn't redirect? Please copy paste the email recipient, subject and body given below</h6>
       <a id='mail_link' href={emailString} style={{visibility: 'hidden'}}>mail</a>
       <div style={{padding: '60px', textAlign: 'left'}}>
-        <p style={pPadding}><strong>TO:</strong>{to}</p>
-        <p style={pPadding}><strong>SUBJECT:</strong>{subject}</p>
+        <p ><strong>TO: </strong></p>
+        <p style={{paddingBottom: '30px'}}>{to}</p>
+        <p ><strong>SUBJECT:</strong></p>
+        <p style={{paddingBottom: '30px'}}>{subject}</p>
         {body.map(p => (
           <p style={pPadding}>{p}</p>
         ))}
