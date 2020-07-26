@@ -4,6 +4,8 @@ import email_to from './email_content/email_to.json';
 import email_templates from './email_content';
 const { to } = email_to;
 
+let pPadding = {paddingBottom: '20px'};
+
 const App = () => {
 
   const getRandomInt = (max) => {
@@ -12,28 +14,28 @@ const App = () => {
 
   const email_to_use = email_templates[getRandomInt(email_templates.length)];
   let { subject, body } = email_to_use;
-  body = body.join('<br><br>');
-  window.open(`mailto:${to}?subject=${subject}&body=${body}`, '_blank');
-  // let emailString = `mailto:${to}?subject=${subject}&body=${body}`
-  let pPadding = {paddingBottom: '20px'};
+  let bodyJoined = body.join('<br><br>');
+  let emailString = `mailto:${to}?subject=${subject}&body=${bodyJoined}`
+
   useEffect(() => {
     // const email_to_use = email_templates[getRandomInt(email_templates.length)];
     // let { subject, body } = email_to_use;
     // body = body.join('<br><br>');
-
-
-    // document.getElementById('mail_link').click();
+    // window.open(`mailto:${to}?subject=${subject}&body=${bodyJoined}`, '_self');
+    document.getElementById('mail_link').click();
   },[])
 
   return (
     <div className="App">
       <h2>Redirecting you to your email client...</h2>
-      {/* <a id='mail_link' href={emailString} style={{visibility: 'hidden'}}>mail</a>*/}
-      {/*<div style={{paddingTop: '50px'}}>
+      <a id='mail_link' href={emailString} style={{visibility: 'hidden'}}>mail</a>
+      <div style={{padding: '60px', textAlign: 'left'}}>
         <p style={pPadding}><strong>TO:</strong>{to}</p>
         <p style={pPadding}><strong>SUBJECT:</strong>{subject}</p>
-        <p style={pPadding}>{body}</p>
-      </div>*/}
+        {body.map(p => (
+          <p style={pPadding}>{p}</p>
+        ))}
+      </div>
     </div>
   );
 }
